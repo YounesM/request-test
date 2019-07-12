@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Resquest Test main window</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <header>
+      <button class="head-btn small-red"></button>
+      <button class="head-btn small-yellow"></button>
+      <button class="head-btn small-green"></button>
+      <span class="title">
+        Raw request tester
+      </span>
+    </header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <span class="label">Raw request</span>
+        </div>
+        <div class="col">
+          <span class="label">Response</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <textarea name="rawRequest" class="form-control" rows="8" cols="80"></textarea>
+          </div>
+          <button class="btn btn-light" id="send_rqst">Send</button>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <textarea name="responseBody" class="form-control" rows="8" cols="80" disabled></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
