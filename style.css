@@ -58,3 +58,7 @@ header button {
   font-size: 12px;
   margin-left: 10px;
 }
+
+.hidden {
+  display: none;
+}
