@@ -34,15 +34,10 @@ ipcMain.on('send', (events, args) => {
     res.on('data', (chunk) => {
       console.log(`BODY: ${chunk}`);
       data += chunk;
+      res.url = args.url;
+      res.method = args.method;
       events.sender.send('response', data);
-      events.sender.send('details',
-        {
-          headers: res.headers,
-          code: res.statusCode,
-          originUrl: args.url,
-          method: res.method
-        }
-      );
+      events.sender.send('details', res);
     });
     res.on('end', () => {
       console.log('No more data in response.');

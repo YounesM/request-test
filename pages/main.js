@@ -33,7 +33,16 @@ sendBtn.addEventListener('click', () => {
     responseArea.value = args;
   });
   ipcRenderer.on('details', (events, args) => {
-    detailsArea.value = JSON.stringify(args);
+    detailsArea.value = "General\n";
+    detailsArea.value += "--------------------\n";
+    detailsArea.value += "Request URL: "+ args.url +"\n";
+    detailsArea.value += "Request Method: "+ args.method +"\n";
+    detailsArea.value += "Status Code: "+ args.statusCode + " " + args.statusMessage +"\n\r";
+    detailsArea.value += "Response Header\n";
+    detailsArea.value += "--------------------\n";
+    Object.keys(args.headers).forEach(header => {
+      detailsArea.value += header + ": " + args.headers[header] + "\n"
+    });
   });
 });
 closeBtn.addEventListener('click', () => {
