@@ -16,6 +16,7 @@ sendBtn.addEventListener('click', () => {
   let req = {};
   req.method = data.split(' ')[0];
   req.url = data.split(' ')[1];
+  req.rawRequest = data; 
   req.headers = {};
   if(post) {
     req.reqData = post;
